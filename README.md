@@ -5,7 +5,7 @@
 
 下载项目：
 ```
-git clone https://gitee.com/wanfeng789/rtmp/live-rtmp.git
+git clone https://gitee.com/wanfeng789/live-rtmp.git
 ```
 ### 步骤 1：在root目录下创建您的项目文件
 

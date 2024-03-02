@@ -2,6 +2,11 @@
 
 #### 确保您的系统已安装 Docker 和 Docker Compose。
 
+
+下载项目：
+```
+git clone https://gitee.com/wanfeng789/rtmp.git
+```
 ### 步骤 1：在root目录下创建您的项目文件
 
  ```

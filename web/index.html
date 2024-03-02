@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>私人直播间</title>
+    <!-- 引入 DPlayer CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+    <!-- 引入 DPlayer 和 HLS.js -->
     <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
         body {
-            background-image: url('https://i.miji.bid/2024/01/09/29e7db3b0af393722f068942a17c2fd0.png');
+            background-image: url('https://i.miji.bid/2024/01/09/29e7db3b0af393722f068942a17c2fd0.png');  // 网页背景图片URL
             background-size: cover;
             margin: 0;
             height: 100vh;
@@ -53,33 +55,19 @@
         <div id="dplayer"></div>
     </div>
     <script>
-        // 使用异步函数获取公网IPv4地址
-        async function getPublicIPv4() {
-            try {
-                const response = await fetch('https://ipinfo.io/ip');
-                const ipv4 = await response.text();
-                return ipv4.trim();
-            } catch (error) {
-                console.error('Error fetching public IPv4:', error);
-                return null;
-            }
-        }
+        // 获取服务器的主机名
+        const serverHostName = window.location.hostname;
 
-        // 在创建 DPlayer 实例前获取IPv4地址，然后设置为视频的URL
-        getPublicIPv4().then((ipv4) => {
-            if (ipv4) {
-                const dp = new DPlayer({
-                    container: document.getElementById('dplayer'),
-                    theme: '#E6E6FA',
-                    video: {
-                        url: `http://${ipv4}:8080/hls/admin.m3u8`, // 使用获取到的IPv4地址
-                        type: 'hls',
-                        pic: 'https://img.win3000.com/m00/2b/2c/a196e8b13619029ac87a09adc6990fd7.jpg',
-                    },
-                    p2pConfig: {
-                        live: true
-                    }
-                });
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            theme: '#E6E6FA',
+            video: {
+                url: `http://${serverHostName}:8080/hls/admin.m3u8`,  // admin为串流密钥可自定义
+                type: 'hls',
+                pic: 'https://img.win3000.com/m00/2b/2c/a196e8b13619029ac87a09adc6990fd7.jpg',  // 播放器封面图片URL
+            },
+            p2pConfig: {
+                live: true  // 如果不是直播设为 false
             }
         });
     </script>

@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
         body {
-            background-image: url('https://i.miji.bid/2024/01/09/29e7db3b0af393722f068942a17c2fd0.png');  // 网页背景图片URL
+            background-image: url('https://i.miji.bid/2024/01/09/29e7db3b0af393722f068942a17c2fd0.png');
             background-size: cover;
             margin: 0;
             height: 100vh;
@@ -59,12 +59,12 @@
             container: document.getElementById('dplayer'),
             theme: '#E6E6FA',
             video: {
-                url: 'http://服务器IP:8080/hls/admin.m3u8',  // admin为串流密钥可自定义
+                url: `http://${SERVER_IP}:8080/hls/admin.m3u8`,  // 使用获取到的服务器 IP
                 type: 'hls',
-                pic: 'https://img.win3000.com/m00/2b/2c/a196e8b13619029ac87a09adc6990fd7.jpg',  // 播放器封面图片URL
+                pic: 'https://img.win3000.com/m00/2b/2c/a196e8b13619029ac87a09adc6990fd7.jpg',
             },
             p2pConfig: {
-                live: true  // 如果不是直播设为 false
+                live: true
             }
         });
     </script>

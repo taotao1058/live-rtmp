@@ -9,8 +9,14 @@ git clone https://gitee.com/wanfeng789/live-rtmp.git
 ```
 
 
-### 2: 运行 Docker 容器
-在 ```/root/live-rtmp``` 目录下运行启动命令：
+### 2: 运行
+
+进入项目目录```cd /root/live-rtmp```
+
+修改服务器IP为你的实际服务器IP
+
+
+启动：
 
 ```
 docker-compose up -d

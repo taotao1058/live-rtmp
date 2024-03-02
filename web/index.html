@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私人直播间</title>
+    <!-- 引入 DPlayer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+    <!-- 引入 DPlayer 和 HLS.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <style>
+        body {
+            background-image: url('https://i.miji.bid/2024/01/09/29e7db3b0af393722f068942a17c2fd0.png');  // 网页背景图片URL
+            background-size: cover;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-title {
+            font-family: 'Arial', sans-serif;
+            color: #E6E6FA;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #dplayer-container {
+            width: 70%;
+            max-width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #dplayer {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 5px solid black;
+            box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.5);
+        }
+        @media (max-width: 600px) {
+            #dplayer-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="video-title">私人直播间</h1>
+    <div id="dplayer-container">
+        <div id="dplayer"></div>
+    </div>
+    <script>
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            theme: '#E6E6FA',
+            video: {
+                url: 'http://服务器IP:8080/hls/admin.m3u8',  // admin为串流密钥可自定义
+                type: 'hls',
+                pic: 'https://img.win3000.com/m00/2b/2c/a196e8b13619029ac87a09adc6990fd7.jpg',  // 播放器封面图片URL
+            },
+            p2pConfig: {
+                live: true  // 如果不是直播设为 false
+            }
+        });
+    </script>
+</body>
+</html>

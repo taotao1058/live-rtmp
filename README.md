@@ -5,7 +5,7 @@
 
 ### 1：下载项目：
 ```
-git clone https://gitee.com/wanfeng789/live-rtmp.git
+https://github.com/taotao1058/live-rtmp.git
 ```
 
 

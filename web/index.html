@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>私人直播间</title>
-    <!-- 引入 DPlayer CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
-    <!-- 引入 DPlayer 和 HLS.js -->
     <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <style>
@@ -54,14 +52,13 @@
     <div id="dplayer-container">
         <div id="dplayer"></div>
     </div>
-    <!-- 在 <script> 标签中添加如下代码 -->
     <script>
         // 使用异步函数获取公网IPv4地址
         async function getPublicIPv4() {
             try {
-                const response = await fetch('https://api64.ipify.org?format=json');
-                const data = await response.json();
-                return data.ip;
+                const response = await fetch('http://ipinfo.io/ip');
+                const ipv4 = await response.text();
+                return ipv4.trim();
             } catch (error) {
                 console.error('Error fetching public IPv4:', error);
                 return null;

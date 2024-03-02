@@ -11,9 +11,13 @@ git clone https://gitee.com/wanfeng789/live-rtmp.git
 
 ### 2: 运行
 
-进入项目目录```cd /root/live-rtmp```
+进入项目目录
 
-修改服务器IP为你的实际服务器IP
+```
+cd /root/live-rtmp
+```
+
+修改`web/index.html`里的服务器IP为你的实际服务器IP
 
 
 启动：

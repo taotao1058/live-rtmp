@@ -34,6 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 20px;
         }
         #dplayer {
             width: 100%;
@@ -47,19 +48,72 @@
                 width: 90%;
             }
         }
+        .buttons-container {
+            display: flex;
+            justify-content: space-around;
+            width: 70%;
+            margin: 0 auto;
+        }
+        .button {
+            width: 150px;
+            height: 40px;
+            background: linear-gradient(to right, #b19cd9, #7e76c8);
+            border: 2px solid #7e76c8;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: linear-gradient(to right, #7e76c8, #b19cd9);
+            border-color: #b19cd9;
+        }
+        .announcement {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(185, 156, 217, 0.3); /* 背景透明度调整为30% */
+            padding: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            border: 1px solid transparent; /* 去掉黑丝线条边框 */
+            border-image: linear-gradient(to right, rgba(185, 156, 217, 0.99), rgba(185, 156, 217, 0)) 1; /* 渐变色边框 */
+            border-image-slice: 1;
+            color: #E6E6FA;
+            text-align: center;
+            font-size: 1.2em;
+            white-space: nowrap; /* 防止文字换行 */
+            overflow: hidden;
+        }
+        .announcement marquee {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
+    <div class="announcement">
+        <marquee behavior="scroll" direction="left" scrollamount="5">这里是网站公告，这里是网站公告，这里是网站公告，这里是网站公告。</marquee>
+    </div>
     <h1 class="video-title">私人直播间</h1>
     <div id="dplayer-container">
         <div id="dplayer"></div>
+    </div>
+    <div class="buttons-container">
+        <a href="https://example.com/blog" class="button" target="_blank">按钮1</a>
+        <a href="https://example.com/link2" class="button" target="_blank">按钮2</a>
+        <a href="https://example.com/link3" class="button" target="_blank">按钮3</a>
+        <a href="https://example.com/link4" class="button" target="_blank">按钮4</a>
     </div>
     <script>
         const dp = new DPlayer({
             container: document.getElementById('dplayer'),
             theme: '#E6E6FA',
             video: {
-                url: `http://${SERVER_IP}:8080/hls/admin.m3u8`,  // 使用获取到的服务器 IP
+                url: 'http://服务器IP:8080/hls/admin.m3u8',
                 type: 'hls',
                 pic: 'https://img.win3000.com/m00/2b/2c/a196e8b13619029ac87a09adc6990fd7.jpg',
             },

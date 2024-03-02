@@ -20,7 +20,7 @@ docker-compose up -d
 
 ### 3：配置直播软件
 使用 OBS 或FFmpeg等软件推流直播。
-推流地址为 ```rtmp://服务器IP:1935/live/admin``` &nbsp;&nbsp;&nbsp; # admin为串流密钥，可自定义。
+推流地址为 ```rtmp://服务器IP:1935/live/admin``` &nbsp;&nbsp;&nbsp;  提示：admin为串流密钥，可在配置文件中修改。
 
 
 ### 4：查看直播

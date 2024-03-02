@@ -8,29 +8,22 @@
 git clone https://gitee.com/wanfeng789/live-rtmp.git
 ```
 
-### 2：编辑配置
 
-```
-cd /root/live-rtmp/web
-```
-
-将`index.html`文件第62行代码的服务器IP，改为你本机实际的服务器IP。
-
-
-
-### 3: 运行 Docker 容器
+### 2: 运行 Docker 容器
 在 ```/root/live-rtmp``` 目录下运行启动命令：
 
 ```
 docker-compose up -d
 ```
 
-### 4：配置直播软件
+访问你的`服务器IP地址`查看前端页面
+
+### 3：配置直播软件
 使用 OBS 或FFmpeg等软件推流直播。
 推流地址为 ```rtmp://服务器IP:1935/live/admin``` &nbsp;&nbsp;&nbsp; # admin为串流密钥，可自定义。
 
 
-### 5：查看直播
+### 4：查看直播
 
 浏览器地址输入你的`服务器IP`查看您的直播。或者用反代实现域名访问。
 

@@ -56,7 +56,7 @@
         // 使用异步函数获取公网IPv4地址
         async function getPublicIPv4() {
             try {
-                const response = await fetch('http://ipinfo.io/ip');
+                const response = await fetch('https://ipinfo.io/ip');
                 const ipv4 = await response.text();
                 return ipv4.trim();
             } catch (error) {
